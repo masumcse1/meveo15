@@ -20,10 +20,11 @@ COPY . .
 # Download all dependencies using docker cache
 #RUN mvn dependency:go-offline
 
+RUN ls -la
+
 RUN mvn clean package -Dscm.url=${SCM} -DskipTests 
 
-RUN echo "masum"
-RUN ls -la
+
 
 ##################################################################
 #####                Build meveo docker image                #####
