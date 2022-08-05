@@ -9,8 +9,6 @@ RUN apt-get -y update
 RUN apt-get -y install git
  
 ARG SCM="scm:git:ssh://git@github.com:masumcse1/meveo15.git"
-
-                       
 ARG BUILD_NUMBER
 
 WORKDIR /usr/src/meveo15
@@ -20,11 +18,7 @@ COPY . .
 # Download all dependencies using docker cache
 #RUN mvn dependency:go-offline
 
-RUN ls -la
-
 RUN mvn clean package -Dscm.url=${SCM} -DskipTests 
-
-
 
 ##################################################################
 #####                Build meveo docker image                #####
