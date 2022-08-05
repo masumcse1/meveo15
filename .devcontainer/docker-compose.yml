@@ -59,10 +59,10 @@ services:
     depends_on:
       - postgres
   meveo:
-    image: masumcse/masruba-dev
-    #build: 
-    #  context: ../
-    #  dockerfile: Dockerfile.dev
+    #image: manaty/meveo-dev
+    build: 
+      context: ../
+      dockerfile: Dockerfile
     container_name: meveo-dev
     networks:
       - meveo
