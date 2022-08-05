@@ -23,6 +23,9 @@ COPY . .
 
 RUN mvn clean package -Dscm.url=${SCM} -DskipTests 
 
+RUN echo "masum"
+RUN ls -la
+
 ##################################################################
 #####                Build meveo docker image                #####
 ##################################################################
