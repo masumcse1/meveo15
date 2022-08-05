@@ -54,7 +54,7 @@ RUN mv wildfly-18.0.1.Final/* /opt/jboss/wildfly
 
 WORKDIR /opt/jboss/wildfly/standalone/deployments
 
-COPY  --from=build-servlets /usr/src/meveo15/meveo-ear/src/target/meveo.ear  meveo.ear
+COPY  --from=build-servlets /usr/src/meveo15/meveo-ear/target/meveo.ear  meveo.ear
                                     
 
 
