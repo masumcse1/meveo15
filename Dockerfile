@@ -10,7 +10,6 @@ RUN apt-get -y install git
  
 ARG SCM="scm:git:ssh://git@github.com:masumcse1/meveo15.git"
 
-
                        
 ARG BUILD_NUMBER
 
