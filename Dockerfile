@@ -13,7 +13,7 @@ ARG SCM="scm:git:ssh://git@github.com:masumcse1/meveo15.git"
                        
 ARG BUILD_NUMBER
 
-WORKDIR /usr/src/meveo
+WORKDIR /usr/src/meveo15
 
 COPY . .
 
@@ -219,10 +219,10 @@ COPY --chown=jboss:jboss docker/configs/cli ${JBOSS_HOME}/cli
 COPY --chown=jboss:jboss docker/configs/props ${JBOSS_HOME}/props
 
 ### Changelog files for Liquibase
-COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo/meveo-model/src/main/db_resources /opt/jboss/liquibase/db_resources
+COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo15/meveo-model/src/main/db_resources /opt/jboss/liquibase/db_resources
 
 ### meveo.ear
-COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo/meveo-ear/src/target/meveo.ear ${JBOSS_HOME}/standalone/deployments/meveo.ear
+COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo15/meveo-ear/src/target/meveo.ear ${JBOSS_HOME}/standalone/deployments/meveo.ear
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
