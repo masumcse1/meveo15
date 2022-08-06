@@ -215,8 +215,8 @@ COPY --chown=jboss:jboss docker/configs/props ${JBOSS_HOME}/props
 ### Changelog files for Liquibase
 COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo15/meveo-model/src/main/db_resources /opt/jboss/liquibase/db_resources
 
-### meveo.ear
-COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo15/meveo-ear/target/meveo.ear ${JBOSS_HOME}/standalone/deployments/meveo.ear
+### meveo.ear                                              
+COPY --chown=jboss:jboss --from=build-meveo /usr/src/meveo15/meveo-ear/target/meveo.ear  ${JBOSS_HOME}/standalone/deployments/meveo.ear
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
